@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="TimerControlPanel.Views.FeedbackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Label x:Name="labelFrom" Content="From:" HorizontalAlignment="Left" Margin="41,50,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="fromCombo" ItemsSource="{Binding Path=UsersList}" DisplayMemberPath="FullName"
+                  SelectedValue="{Binding Path=SelectedSender, Mode=TwoWay}" HorizontalAlignment="Left"
+                  Margin="95,50,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="labelTo" Content="To:" HorizontalAlignment="Left" Margin="41,90,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="toCombo" ItemsSource="{Binding Path=UsersList}" DisplayMemberPath="FullName"
+                  SelectedValue="{Binding Path=SelectedReceiver, Mode=TwoWay}" HorizontalAlignment="Left"
+                  Margin="95,90,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="labelMessage" Content="Message:" HorizontalAlignment="Left" Margin="34,172,0,0"
+               VerticalAlignment="Top" />
+        <TextBox x:Name="textBoxMessage"
+                 HorizontalAlignment="Left"
+                 Height="118" Margin="98,172,-25,0"
+                 TextWrapping="Wrap" Text="{Binding Path=MailMessage, Mode=TwoWay}"
+                 VerticalAlignment="Top" Width="227"
+                 VerticalScrollBarVisibility="Auto" />
+        <Button x:Name="buttonSend" Command="{Binding Path=SendCommand}" Content="Send" HorizontalAlignment="Left"
+                Margin="376,265,-151,0" VerticalAlignment="Top" Width="75" />
+        <Label x:Name="label" Content="Subject:" HorizontalAlignment="Left" Margin="41,125,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="98,126,-25,0" TextWrapping="Wrap" Text="{Binding Path=SubjectBox, Mode=TwoWay}" VerticalAlignment="Top" Width="227"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Timer.Wcf.TimerService" CodeBehind="TimerService.svc.cs" %>
