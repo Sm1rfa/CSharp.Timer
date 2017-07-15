@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b299e8ee-7677-4539-9bbe-c8fa422be0bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://timeregisterservice.azurewebsites.net/TimerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimerService.xsd" MetadataType="Schema" ID="03f77543-4e7d-468a-9e7a-aecf52db4f33" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimerService1.xsd" MetadataType="Schema" ID="db791392-2bd6-477a-9d77-61f2b2cfed11" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimerService2.xsd" MetadataType="Schema" ID="bfa30b54-8706-464f-8ed6-1066c3d27a62" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TimerService.wsdl" MetadataType="Wsdl" ID="a3200eab-a1c6-4fc9-89b1-08647cb17910" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?wsdl" />
+    <MetadataFile FileName="TimerService.disco" MetadataType="Disco" ID="df453f6c-43c8-4d80-98e8-d0ddd3ba0252" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?disco" />
+    <MetadataFile FileName="TimerService3.xsd" MetadataType="Schema" ID="bab2081b-ac06-47b9-be99-455950ef1ea4" SourceId="1" SourceUrl="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

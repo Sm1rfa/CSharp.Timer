@@ -1,0 +1,15 @@
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.dll.config
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.dll
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.pdb
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\bin\Newtonsoft.Json.dll
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\bin\Newtonsoft.Json.xml
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\obj\Debug\SCBDK.Internal.Timer.Restful.dll
+D:\Kea\SD.Final.Project.Test\SCBDK.Internal.Timer.Restful\SCBDK.Internal.Timer.Restful\obj\Debug\SCBDK.Internal.Timer.Restful.pdb
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.dll.config
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.dll
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\bin\SCBDK.Internal.Timer.Restful.pdb
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\bin\Newtonsoft.Json.dll
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\bin\Newtonsoft.Json.xml
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\obj\Debug\SCBDK.Internal.Timer.Restful.csprojResolveAssemblyReference.cache
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\obj\Debug\SCBDK.Internal.Timer.Restful.dll
+E:\Kea\GitHub\CSharp.Timer\CSharp.Timer\TimerRestful\Timer.Restful\SCBDK.Internal.Timer.Restful\obj\Debug\SCBDK.Internal.Timer.Restful.pdb

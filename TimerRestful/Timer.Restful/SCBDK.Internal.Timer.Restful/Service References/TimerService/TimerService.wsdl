@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TimerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ITimerService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SCBDK.Internal.Timer.Wcf.DataMembers" />
+      <xsd:import schemaLocation="http://timeregisterservice.azurewebsites.net/TimerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCBDK.Internal.Timer.TimerContext.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITimerService_GetAsyncUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncUsers" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncUser" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncUser" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncUser" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncUser" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncTimes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncTimes" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncTimes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncTime" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncTime" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncTime" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncTime" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncProjects" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncProject" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncProject" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncProject" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncProject" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_GetAsyncDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsyncDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_CreateAsyncDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAsyncDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_UpdateAsyncDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAsyncDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_DeleteAsyncDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAsyncDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_RetrieveTimeForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveTimeForUser" />
+  </wsdl:message>
+  <wsdl:message name="ITimerService_RetrieveTimeForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveTimeForUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITimerService">
+    <wsdl:operation name="GetAsyncUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncUsers" message="tns:ITimerService_GetAsyncUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncUsersResponse" message="tns:ITimerService_GetAsyncUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncUser" message="tns:ITimerService_GetAsyncUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncUserResponse" message="tns:ITimerService_GetAsyncUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncUser" message="tns:ITimerService_CreateAsyncUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncUserResponse" message="tns:ITimerService_CreateAsyncUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncUser" message="tns:ITimerService_UpdateAsyncUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncUserResponse" message="tns:ITimerService_UpdateAsyncUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncUser" message="tns:ITimerService_DeleteAsyncUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncUserResponse" message="tns:ITimerService_DeleteAsyncUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTimes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncTimes" message="tns:ITimerService_GetAsyncTimes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncTimesResponse" message="tns:ITimerService_GetAsyncTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncTime" message="tns:ITimerService_GetAsyncTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncTimeResponse" message="tns:ITimerService_GetAsyncTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncTime" message="tns:ITimerService_CreateAsyncTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncTimeResponse" message="tns:ITimerService_CreateAsyncTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncTime" message="tns:ITimerService_UpdateAsyncTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncTimeResponse" message="tns:ITimerService_UpdateAsyncTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncTime" message="tns:ITimerService_DeleteAsyncTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncTimeResponse" message="tns:ITimerService_DeleteAsyncTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncProjects" message="tns:ITimerService_GetAsyncProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncProjectsResponse" message="tns:ITimerService_GetAsyncProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncProject" message="tns:ITimerService_GetAsyncProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncProjectResponse" message="tns:ITimerService_GetAsyncProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncProject" message="tns:ITimerService_CreateAsyncProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncProjectResponse" message="tns:ITimerService_CreateAsyncProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncProject" message="tns:ITimerService_UpdateAsyncProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncProjectResponse" message="tns:ITimerService_UpdateAsyncProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncProject" message="tns:ITimerService_DeleteAsyncProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncProjectResponse" message="tns:ITimerService_DeleteAsyncProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncDepartments" message="tns:ITimerService_GetAsyncDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncDepartmentsResponse" message="tns:ITimerService_GetAsyncDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/GetAsyncDepartment" message="tns:ITimerService_GetAsyncDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/GetAsyncDepartmentResponse" message="tns:ITimerService_GetAsyncDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncDepartment" message="tns:ITimerService_CreateAsyncDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/CreateAsyncDepartmentResponse" message="tns:ITimerService_CreateAsyncDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncDepartment" message="tns:ITimerService_UpdateAsyncDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/UpdateAsyncDepartmentResponse" message="tns:ITimerService_UpdateAsyncDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncDepartment" message="tns:ITimerService_DeleteAsyncDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/DeleteAsyncDepartmentResponse" message="tns:ITimerService_DeleteAsyncDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/SendMessage" message="tns:ITimerService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/SendMessageResponse" message="tns:ITimerService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTimeForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimerService/RetrieveTimeForUser" message="tns:ITimerService_RetrieveTimeForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimerService/RetrieveTimeForUserResponse" message="tns:ITimerService_RetrieveTimeForUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITimerService" type="tns:ITimerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAsyncUsers">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTimes">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProjects">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartments">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTimeForUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/RetrieveTimeForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_ITimerService" type="tns:ITimerService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ITimerService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAsyncUsers">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTimes">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncTime">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProjects">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncProject">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartments">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/GetAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/CreateAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/UpdateAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAsyncDepartment">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/DeleteAsyncDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTimeForUser">
+      <soap:operation soapAction="http://tempuri.org/ITimerService/RetrieveTimeForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimerService">
+    <wsdl:port name="BasicHttpBinding_ITimerService" binding="tns:BasicHttpBinding_ITimerService">
+      <soap:address location="http://timeregisterservice.azurewebsites.net/TimerService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_ITimerService" binding="tns:BasicHttpsBinding_ITimerService">
+      <soap:address location="https://timeregisterservice.azurewebsites.net/TimerService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

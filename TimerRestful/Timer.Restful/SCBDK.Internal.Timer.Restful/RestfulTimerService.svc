@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SCBDK.Internal.Timer.Restful.RestfulTimerService" CodeBehind="RestfulTimerService.svc.cs" %>
